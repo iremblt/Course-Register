@@ -1,0 +1,48 @@
+@model Students
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/style.css">    
+    <title>Apply Form</title>
+</head>
+<body>
+        <div class="container m-4">
+        <div class="card mx-auto" style="width: 500px;">
+            <div class="card-header">
+                Application Form 
+            </div>
+        <div class="card-body">
+               <form asp-action="apply" method="POST">
+                    <div asp-validation-summary="All"></div>
+        <div class="form-group">
+        <label asp-for ="StudentName">Enter Name: </label>
+        <input asp-for ="StudentName" class="form-control">
+        </div>
+        <div class="form-group">
+            <label asp-for ="StudentEmail">Enter Email: </label>
+            <input asp-for ="StudentEmail" class="form-control">
+        </div>        
+        <div class="form-group">
+            <label asp-for ="StudentPhone">Enter Phone Number:</label>
+            <input asp-for ="StudentPhone" class="form-control">
+        </div>
+        <div class="form-group"> 
+            <label asp-for="IsConfirm">Do you want to join this course?</label>
+            <select asp-for="IsConfirm" class="form-control">
+                <option value="">Choose these options.</option>
+                <option value="true"> Yes, I want to join.</option>
+                <option value="false"> No, I don't want to join.</option>
+        </select>
+        </div>
+        <p>
+            <input type="submit" value="Submit" class="btn btn-primary btn-block">
+        </p>
+        </form>
+            </div>
+        </div>
+</body>
+</html>
